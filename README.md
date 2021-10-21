@@ -11,6 +11,19 @@ To install, download or clone the repo, then:
 `npm install`
 `truffle compile`
 
+
+## Contract addresses
+1. 0x354316B4dA82529fB2682Bd436f1226c95a0bc2b
+[1 on Etherscan](https://rinkeby.etherscan.io/address/0x354316b4da82529fb2682bd436f1226c95a0bc2b)
+
+2. 0xE832F9f4683EdffeB5900D2c1073E9C249277E03 
+[2 on Etherscan](https://rinkeby.etherscan.io/address/0xe832f9f4683edffeb5900d2c1073e9c249277e03)
+
+3. 0x600Bc9610657b998e6b15232E74DDB3B54237AE7
+[3 on Etherscan](https://rinkeby.etherscan.io/address/0x600bc9610657b998e6b15232e74ddb3b54237ae7)
+
+4. [4 on Etherscan](0x67a60770b6d7a212fA6926AA8c19b9369C21b2A7)
+
 ## Develop Client
 
 To run truffle tests:

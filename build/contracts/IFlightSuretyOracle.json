@@ -1,0 +1,374 @@
+{
+  "contractName": "IFlightSuretyOracle",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        }
+      ],
+      "name": "authorizeCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        }
+      ],
+      "name": "unauthorizeCaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"}],\"name\":\"authorizeCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_caller\",\"type\":\"address\"}],\"name\":\"unauthorizeCaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"authorizeCaller(address)\":{\"notice\":\"caller authorization \"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FlightSuretyApp/interfaces/IFlightSuretyOracle.sol\":\"IFlightSuretyOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FlightSuretyApp/interfaces/IFlightSuretyOracle.sol\":{\"keccak256\":\"0x00f35b29679ec4248383fddfe02a7ef8664a2d51d440e2accb57381b6940c2d5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://08c770dd65bf6cd69493ec0e94d4a9bf68c61086332f845e14158459bc73059d\",\"dweb:/ipfs/QmR3ScmFyNNUbtXw5hdSJcVx6M9duMYE4djQLEkJb1QAer\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.00;\n\ninterface IFlightSuretyOracle {\n    /** caller authorization */\n\n    // authorize a new caller to call the contract\n    function authorizeCaller(address _caller) external;\n\n    // remove an existing caller rights to call the contract\n    function unauthorizeCaller(address _caller) external;\n\n    \n\n}\n",
+  "sourcePath": "/Users/devonmartens/udacity/Flight-Survey-DOA/contracts/FlightSuretyApp/interfaces/IFlightSuretyOracle.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/FlightSuretyApp/interfaces/IFlightSuretyOracle.sol",
+    "exportedSymbols": {
+      "IFlightSuretyOracle": [
+        2828
+      ]
+    },
+    "id": 2829,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2816,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".00"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:7"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2828,
+        "linearizedBaseContracts": [
+          2828
+        ],
+        "name": "IFlightSuretyOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2817,
+              "nodeType": "StructuredDocumentation",
+              "src": "101:27:7",
+              "text": "caller authorization "
+            },
+            "functionSelector": "2c388d5d",
+            "id": 2822,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "authorizeCaller",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2820,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2819,
+                  "mutability": "mutable",
+                  "name": "_caller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2822,
+                  "src": "210:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2818,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "210:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "209:17:7"
+            },
+            "returnParameters": {
+              "id": 2821,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "235:0:7"
+            },
+            "scope": 2828,
+            "src": "185:51:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4ac8c5ae",
+            "id": 2827,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unauthorizeCaller",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2824,
+                  "mutability": "mutable",
+                  "name": "_caller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2827,
+                  "src": "330:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2823,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "330:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "329:17:7"
+            },
+            "returnParameters": {
+              "id": 2826,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "355:0:7"
+            },
+            "scope": 2828,
+            "src": "303:53:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2829,
+        "src": "65:300:7"
+      }
+    ],
+    "src": "39:327:7"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/FlightSuretyApp/interfaces/IFlightSuretyOracle.sol",
+    "exportedSymbols": {
+      "IFlightSuretyOracle": [
+        2828
+      ]
+    },
+    "id": 2829,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2816,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".00"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:7"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2828,
+        "linearizedBaseContracts": [
+          2828
+        ],
+        "name": "IFlightSuretyOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2817,
+              "nodeType": "StructuredDocumentation",
+              "src": "101:27:7",
+              "text": "caller authorization "
+            },
+            "functionSelector": "2c388d5d",
+            "id": 2822,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "authorizeCaller",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2820,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2819,
+                  "mutability": "mutable",
+                  "name": "_caller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2822,
+                  "src": "210:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2818,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "210:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "209:17:7"
+            },
+            "returnParameters": {
+              "id": 2821,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "235:0:7"
+            },
+            "scope": 2828,
+            "src": "185:51:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4ac8c5ae",
+            "id": 2827,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unauthorizeCaller",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2824,
+                  "mutability": "mutable",
+                  "name": "_caller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2827,
+                  "src": "330:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2823,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "330:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "329:17:7"
+            },
+            "returnParameters": {
+              "id": 2826,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "355:0:7"
+            },
+            "scope": 2828,
+            "src": "303:53:7",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2829,
+        "src": "65:300:7"
+      }
+    ],
+    "src": "39:327:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-10-21T15:50:51.397Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "authorizeCaller(address)": {
+        "notice": "caller authorization "
+      }
+    },
+    "version": 1
+  }
+}

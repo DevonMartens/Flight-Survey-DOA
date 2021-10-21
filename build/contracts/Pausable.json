@@ -1,0 +1,739 @@
+{
+  "contractName": "Pausable",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Pausable/Pausable.sol\":\"Pausable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Pausable/Pausable.sol\":{\"keccak256\":\"0xf6be8b97c082710faaff54ddc8436830d741b94de814db86abb9cd138dd0c195\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bac111c9f74ea1c7246eb04bb957331f6269ec980919fc5ee2b8a8a195409c06\",\"dweb:/ipfs/QmfL7qDZ8sTbT8JJkeHdA3bgX28iyAQVejx5EAa9bzToqc\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b506000805460ff19166001179055603f80602a6000396000f3fe6080604052600080fdfea26469706673582212201a601ebc6333af74bab786f33269dd9606abd206b279d00af4d00ed3c800789264736f6c63430008000033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212201a601ebc6333af74bab786f33269dd9606abd206b279d00af4d00ed3c800789264736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "65:321:21:-:0;;;113:50;;;;;;;;;-1:-1:-1;137:12:21;:19;;-1:-1:-1;;137:19:21;152:4;137:19;;;65:321;;;;;;",
+  "deployedSourceMap": "65:321:21:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.00;\n\ncontract Pausable {\n    bool operationnal;\n\n    constructor() {\n        operationnal = true;\n    }\n\n    modifier onlyOperational() {\n        require(operationnal, \"contract must be operationnal\");\n        _;\n    }\n\n    function _setOperationnal(bool _operationnal) internal {\n        operationnal = _operationnal;\n    }\n}\n",
+  "sourcePath": "/Users/devonmartens/udacity/Flight-Survey-DOA/contracts/Pausable/Pausable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Pausable/Pausable.sol",
+    "exportedSymbols": {
+      "Pausable": [
+        5308
+      ]
+    },
+    "id": 5309,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5278,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".00"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:21"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 5308,
+        "linearizedBaseContracts": [
+          5308
+        ],
+        "name": "Pausable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5280,
+            "mutability": "mutable",
+            "name": "operationnal",
+            "nodeType": "VariableDeclaration",
+            "scope": 5308,
+            "src": "89:17:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 5279,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "89:4:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5287,
+              "nodeType": "Block",
+              "src": "127:36:21",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5285,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5283,
+                      "name": "operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5280,
+                      "src": "137:12:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 5284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "152:4:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "137:19:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5286,
+                  "nodeType": "ExpressionStatement",
+                  "src": "137:19:21"
+                }
+              ]
+            },
+            "id": 5288,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5281,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "124:2:21"
+            },
+            "returnParameters": {
+              "id": 5282,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "127:0:21"
+            },
+            "scope": 5308,
+            "src": "113:50:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5296,
+              "nodeType": "Block",
+              "src": "196:82:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5291,
+                        "name": "operationnal",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5280,
+                        "src": "214:12:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "636f6e7472616374206d757374206265206f7065726174696f6e6e616c",
+                        "id": 5292,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "228:31:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f8a775842042a999b11c9704275bb45b28b724e62cffe9d650c6d7e6039a2309",
+                          "typeString": "literal_string \"contract must be operationnal\""
+                        },
+                        "value": "contract must be operationnal"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_f8a775842042a999b11c9704275bb45b28b724e62cffe9d650c6d7e6039a2309",
+                          "typeString": "literal_string \"contract must be operationnal\""
+                        }
+                      ],
+                      "id": 5290,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "206:7:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5293,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "206:54:21",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5294,
+                  "nodeType": "ExpressionStatement",
+                  "src": "206:54:21"
+                },
+                {
+                  "id": 5295,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "270:1:21"
+                }
+              ]
+            },
+            "id": 5297,
+            "name": "onlyOperational",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5289,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "193:2:21"
+            },
+            "src": "169:109:21",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5306,
+              "nodeType": "Block",
+              "src": "339:45:21",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5302,
+                      "name": "operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5280,
+                      "src": "349:12:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 5303,
+                      "name": "_operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5299,
+                      "src": "364:13:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "349:28:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5305,
+                  "nodeType": "ExpressionStatement",
+                  "src": "349:28:21"
+                }
+              ]
+            },
+            "id": 5307,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setOperationnal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5299,
+                  "mutability": "mutable",
+                  "name": "_operationnal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5307,
+                  "src": "310:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5298,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:20:21"
+            },
+            "returnParameters": {
+              "id": 5301,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "339:0:21"
+            },
+            "scope": 5308,
+            "src": "284:100:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5309,
+        "src": "65:321:21"
+      }
+    ],
+    "src": "39:348:21"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/Pausable/Pausable.sol",
+    "exportedSymbols": {
+      "Pausable": [
+        5308
+      ]
+    },
+    "id": 5309,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5278,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".00"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:24:21"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 5308,
+        "linearizedBaseContracts": [
+          5308
+        ],
+        "name": "Pausable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5280,
+            "mutability": "mutable",
+            "name": "operationnal",
+            "nodeType": "VariableDeclaration",
+            "scope": 5308,
+            "src": "89:17:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 5279,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "89:4:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5287,
+              "nodeType": "Block",
+              "src": "127:36:21",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5285,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5283,
+                      "name": "operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5280,
+                      "src": "137:12:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 5284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "152:4:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "137:19:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5286,
+                  "nodeType": "ExpressionStatement",
+                  "src": "137:19:21"
+                }
+              ]
+            },
+            "id": 5288,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5281,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "124:2:21"
+            },
+            "returnParameters": {
+              "id": 5282,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "127:0:21"
+            },
+            "scope": 5308,
+            "src": "113:50:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5296,
+              "nodeType": "Block",
+              "src": "196:82:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5291,
+                        "name": "operationnal",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5280,
+                        "src": "214:12:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "636f6e7472616374206d757374206265206f7065726174696f6e6e616c",
+                        "id": 5292,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "228:31:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f8a775842042a999b11c9704275bb45b28b724e62cffe9d650c6d7e6039a2309",
+                          "typeString": "literal_string \"contract must be operationnal\""
+                        },
+                        "value": "contract must be operationnal"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_f8a775842042a999b11c9704275bb45b28b724e62cffe9d650c6d7e6039a2309",
+                          "typeString": "literal_string \"contract must be operationnal\""
+                        }
+                      ],
+                      "id": 5290,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "206:7:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5293,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "206:54:21",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5294,
+                  "nodeType": "ExpressionStatement",
+                  "src": "206:54:21"
+                },
+                {
+                  "id": 5295,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "270:1:21"
+                }
+              ]
+            },
+            "id": 5297,
+            "name": "onlyOperational",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5289,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "193:2:21"
+            },
+            "src": "169:109:21",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5306,
+              "nodeType": "Block",
+              "src": "339:45:21",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5302,
+                      "name": "operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5280,
+                      "src": "349:12:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 5303,
+                      "name": "_operationnal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5299,
+                      "src": "364:13:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "349:28:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5305,
+                  "nodeType": "ExpressionStatement",
+                  "src": "349:28:21"
+                }
+              ]
+            },
+            "id": 5307,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setOperationnal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5299,
+                  "mutability": "mutable",
+                  "name": "_operationnal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5307,
+                  "src": "310:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5298,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:20:21"
+            },
+            "returnParameters": {
+              "id": 5301,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "339:0:21"
+            },
+            "scope": 5308,
+            "src": "284:100:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5309,
+        "src": "65:321:21"
+      }
+    ],
+    "src": "39:348:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-10-21T15:50:51.453Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
