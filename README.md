@@ -11,6 +11,7 @@ To install, download or clone the repo, then:
 `npm install`
 `truffle compile`
 
+## Solidity Verison 0.8.0
 
 ## Contract addresses
 1. 0x354316B4dA82529fB2682Bd436f1226c95a0bc2b
@@ -63,3 +64,132 @@ Deploy the contents of the ./dapp folder
 * [Solidity Language Reference](http://solidity.readthedocs.io/en/v0.4.24/)
 * [Ethereum Blockchain Explorer](https://etherscan.io/)
 * [Web3Js Reference](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+
+# Configurations
+
+Multiple internal settings have been set in the project and need to be adjusted :
+
+- _tokenHolderMinBlockRequirement: default number of block before giving the ability to a token holder to participate in the community decision (default to 2 for testing purposes but should be a month equivalent in block number ) (plays a role to mitigate the risk of an EOA transfering his holding to gain more vote power )
+- _proposalValidBlockNum: default number of block a setting amendment porposal (membership fee or insurance coverage ratio) is valid
+- _defaultBlockNumBeforeRedeem: default number of block before giving the ability to a token holder to redeem it's holding for a cut of the funds profits
+- _currentInsuranceCoverage : current insurance coverage ratio (default to 150 set in InsuranceCoverageAmenedmentProposal contract constructor)
+- operationnal : operationnal state of the contracts (default to true)
+- _authorizedFlightDelay : default number of time in seconds a flight can be late.
+
+## Contract deployement workflow
+
+1. deploy FlightSuretyApp
+   - uint256 _tokenHolderMinBlockRequirement
+   - uint256 _proposalValidBlockNum
+2. deploy FlightSuretyOracle
+   - uint64 _authorizedFlightDelay
+3. deploy FlightSuretyData authorizing callers :
+   - address _appContractAddress
+   - address _oracleContractAddress
+4. deploy OracleProviderRole authorizing callers :
+   - address _appContractAddress
+   - address _oracleContractAddress
+5. deploy InsuranceProviderRole authorizing callers :
+   - address _appContractAddress
+6. deploy FlightSuretyShares authorizing callers :
+   - address _appContractAddress
+7. deploy InsuranceCoverageAmendmentProposal authroizing caller :
+   - address _appContractAddress
+   - uint256 _currentInsuranceCoverage
+8. deploy MembershipFeeAmendmentProposal authorizing caller :
+   - address _appContractAddress
+   - uint256 _currentMembershipfee
+9. initialize FlightSuretyApp referencing external contracts addresses :
+   - address _flightSuretyData
+   - address _insuranceCoverageAmendmentProposal
+   - address _membershipFeeAmendmentProposal
+   - address _insuranceProviderRole
+   - address _oracleProviderRole
+   - address _flighSuretyShares
+10. initialize FlightSuretyOracle referencing external contracts addresses :
+    - address _flightSuretyData
+    - address _oracleProviderRole
+
+## Config the app
+
+In order to run the application you will need to create environnement files to refrences environnement variables and add the already deployed contract address to the supplychain contract abi.
+
+```bash
+# creating general environement file
+echo -e "MNEMONIC=<YOUR MNEMONIC> PROVIDER_URL=<YOUR PROVIDER URL> SERVER_PORT=<SERVER PORT>" >> .env
+```
+
+## Quickstart (DEV ENVIRONNEMENT)
+
+### Install dependencies
+
+```bash
+# install general dependencies
+npm i
+```
+
+```bash
+# install client dependencies
+cd ./client/
+npm i
+```
+
+```bash
+# install server dependencies
+cd ./server/
+npm i
+```
+
+### Lauch the smart contract test
+
+```bash
+# lauch ganache-cli
+ganache-cli
+# install client packages
+npm run test
+```
+
+### Deploy the smart contracts
+
+```bash
+# deploy the contracts to localhost network, exports the contracts abi to the client directory and seed the contract with n oracle providers accounts
+npm run migrate-dev
+```
+
+### Lauch Ganache client
+
+```bash
+# lauch Ganache client with the specified amount of accounts
+ganache-cli --accounts=20
+```
+
+### Running the app (development)
+
+```bash
+# running the client app in dev environement (hot reloading enabled)
+cd ./client
+npm run dapp
+```
+
+```bash
+# running the server app in dev environement (hot reloading enabled)
+cd ./server
+npm run server
+```
+
+## Deployment (PROD ENVIRONNEMENT)
+
+### Deploy the contract to ethereum rinkeby network
+
+```bash
+# deploy the contracts to rinkeby network
+npm run migrate
+```
+
+### Build the app
+
+```bash
+# build the app
+cd ./client
+npm run build
+```
